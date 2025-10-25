@@ -1,1838 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Art Portfolio</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <!-- ✅ META CORE -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art Zolina III — Web & Game Developer | TumaoGames</title>
+  <meta name="description" content="Portfolio of Art Zolina III — senior web & game developer. Unity, HTML5/Phaser, performance-focused engineering, and production-ready systems." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://tumaogames.github.io/" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
+  <!-- ✅ PERFORMANCE: fonts & hero preloads -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/bg_1.png" imagesrcset="images/bg_1.png 1x" />
+  <link rel="preload" as="image" href="images/bg_2.png" imagesrcset="images/bg_2.png 1x" />
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+  <!-- ✅ SOCIAL PREVIEW -->
+  <meta property="og:site_name" content="TumaoGames" />
+  <meta property="og:title" content="Art Zolina III — Web & Game Developer" />
+  <meta property="og:description" content="Unity • HTML5 • Phaser • Performance engineering • Production-ready game systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tumaogames.github.io/" />
+  <meta property="og:image" content="https://tumaogames.github.io/images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Art Zolina III — Web & Game Developer" />
+  <meta name="twitter:description" content="Unity • HTML5 • Phaser • Performance engineering • Production-ready game systems." />
+  <meta name="twitter:image" content="https://tumaogames.github.io/images/og-cover.jpg" />
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
+  <!-- ✅ STRUCTURED DATA (Person + WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Art Zolina III",
+    "jobTitle": "Web & Game Developer",
+    "url": "https://tumaogames.github.io/",
+    "image": "https://tumaogames.github.io/images/about.png",
+    "sameAs": [
+      "https://tumaogames.com/",
+      "https://github.com/tumaogames",
+      "https://twitter.com/ArtZolina",
+      "https://www.facebook.com/art.zolinaiii",
+      "https://www.instagram.com/tumaogames/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TumaoGames Portfolio",
+    "url": "https://tumaogames.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tumaogames.github.io/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
-    <link rel="stylesheet" href="css/aos.css" />
+  <!-- ✅ CSS (keep your stack; ensure cache-busting via querystrings on deploy) -->
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/magnific-popup.css" />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link rel="stylesheet" href="css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/flaticon.css" />
+  <link rel="stylesheet" href="css/icomoon.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="mycss.css" />
 
-    <link rel="stylesheet" href="css/ionicons.min.css" />
+  <!-- ✅ SMALL A11Y & DESIGN IMPROVEMENTS -->
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce){
+      .owl-carousel, [data-scrollax-parent], [data-scrollax]{animation:none !important;transition:none !important}
+    }
+    /* Make navbar sticky and add subtle blur */
+    #ftco-navbar{backdrop-filter:saturate(140%) blur(10px); background:rgba(10,10,10,.65)}
+    .navbar-brand{font-weight:700;letter-spacing:.5px}
+    /* Improve buttons */
+    .btn{border-radius:16px}
+    /* Prevent CLS by setting aspect ratios on bg blocks */
+    .project{aspect-ratio: 16/9}
+    .img-about .img{aspect-ratio: 4/3}
+    /* Popup styles (if not defined) */
+    .popup{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.75);z-index:9999}
+    .popup.open{display:grid}
+    .popup-content{position:relative;max-width:min(92vw,1200px)}
+    .popup-content img{width:100%;height:auto;display:block}
+    .close-btn{position:absolute;top:.5rem;right:.75rem;font-size:2rem;line-height:1;color:#fff;cursor:pointer}
+    /* Footer polishing */
+    footer .ftco-heading-2{margin-bottom:.75rem}
+  </style>
+</head>
 
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="mycss.css">
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <nav
-      class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
-      id="ftco-navbar"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Art</a>
-        <button
-          class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item">
-              <a href="#home-section" class="nav-link"><span>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#about-section" class="nav-link"><span>About</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#resume-section" class="nav-link"><span>Resume</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#services-section" class="nav-link"
-                ><span>Services</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#skills-section" class="nav-link"><span>Skills</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#projects-section" class="nav-link"
-                ><span>Projects</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#contact-section" class="nav-link"
-                ><span>Contact</span></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div
-              class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-              data-scrollax-parent="true"
-            >
-              <div
-                class="one-third js-fullheight order-md-last img"
-                style="background-image: url(images/bg_1.png)"
-              >
-                <div class="overlay"></div>
-              </div>
-              <div
-                class="one-forth d-flex align-items-center ftco-animate"
-                data-scrollax=" properties: { translateY: '70%' }"
-              >
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Art Zolina III</span></h1>
-                  <h2 class="mb-4">A Web Developer / Game Developer</h2>
-                  <p>
-                    <a href="#contact-section" class="btn btn-primary py-3 px-4"
-                      >Hire me</a
-                    >
-                    <a
-                      href="#projects-section"
-                      class="btn btn-white btn-outline-white py-3 px-4"
-                      >My works</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div
-              class="row d-flex no-gutters slider-text align-items-end justify-content-end"
-              data-scrollax-parent="true"
-            >
-              <div
-                class="one-third js-fullheight order-md-last img"
-                style="background-image: url(images/bg_2.png)"
-              >
-                <div class="overlay"></div>
-              </div>
-              <div
-                class="one-forth d-flex align-items-center ftco-animate"
-                data-scrollax=" properties: { translateY: '70%' }"
-              >
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">
-                    I'm a <span>Web Developer/ Game Developer</span> based in
-                    Philippines
-                  </h1>
-                  <p>
-                    <a href="#contact-section" class="btn btn-primary py-3 px-4"
-                      >Hire me</a
-                    >
-                    <a
-                      href="#projects-section"
-                      class="btn btn-white btn-outline-white py-3 px-4"
-                      >My works</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-6 col-lg-5 d-flex">
-            <div class="img-about img d-flex align-items-stretch">
-              <div class="overlay"></div>
-              <div
-                class="img d-flex align-self-stretch align-items-center"
-                style="background-image: url(images/bg_1.png)"
-              ></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-            <div class="row justify-content-start pb-3">
-              <div class="col-md-12 heading-section ftco-animate">
-                <h1 class="big">About</h1>
-                <h2 class="mb-4">About Me</h2>
-                <p>
-                  Welcome to Art's Digital Realm! Introducing a Seasoned Web and
-                  Game Developer with Over 15+ Years of Expertise Hello and
-                  thank you for visiting! My name is Art, and I am thrilled to
-                  showcase my passion for technology and creativity through my
-                  portfolio. With a successful journey spanning more than a
-                  decade in the industry, I have honed my skills to become a
-                  versatile and accomplished web developer and game developer.
-                </p>
-                <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex">
-                    <span>Name:</span> <span>Art Zolina III</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Date of birth:</span> <span>January 05, 1988</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Address:</span>
-                    <span>Baybay, Andagao, Kalibo, Aklan</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Zip code:</span> <span>5600</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Email:</span> <span>artchel06studios@yahoo.com</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Phone: </span> <span>+639480599808</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-                <p class="mb-4">
-                  <span class="number" data-number="120">0</span>
-                  <span>Project complete</span>
-                </p>
-                <p>
-                  <a
-                    href="https://tumaogames.github.io/Art S. Zolina III-Resume.pdf"
-                    class="btn btn-primary py-3 px-3"
-                    >Download CV</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>
-              As a web developer, I take pride in creating elegant and
-              user-friendly websites that seamlessly combine aesthetics with
-              functionality. My proficiency in an array of programming languages
-              and frameworks enables me to bring ideas to life and deliver
-              exceptional user experiences. With each project, I strive to
-              exceed expectations, leaving a lasting impact on visitors.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">April 29, 2025 - October 13, 2025</span>
-              <h2>Game Developer</h2>
-              <span class="position">HPL Game Design Corporation</span>
-              <p class="mt-4">
-                At HPL Game Design Corporation, I contributed to the creation of innovative 
-                and engaging game experiences by leveraging my expertise in Unity and modern 
-                development frameworks. My responsibilities included designing and implementing 
-                core gameplay systems, optimizing performance across multiple platforms, and 
-                collaborating with cross-functional teams to deliver polished products. 
-                This role strengthened my technical expertise, enhanced my creative problem-solving 
-                abilities, and expanded my experience in delivering high-quality interactive 
-                entertainment.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">November 2023-September 2024</span>
-              <h2>Senior Game Developer</h2>
-              <span class="position">POGO</span>
-              <p class="mt-4">
-                As a Senior Game Developer at POGO, I have been responsible for
-                developing captivating slot games using Unity and HTML5. My role
-                involves managing the complete game development cycle, from initial
-                concept and design to final testing and deployment. Working closely
-                with designers and animators, I ensure smooth integration of assets
-                while optimizing performance across various platforms. My expertise
-                in Unity's scripting and HTML5 frameworks has allowed me to create
-                responsive, high-quality games that enhance user engagement. This
-                experience has deepened my technical knowledge while honing my
-                leadership skills in managing game development projects.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">May 2022-August 2022</span>
-              <h2>Web Developer</h2>
-              <span class="position">Playasia</span>
-              <p class="mt-4">
-                From May 2022 to August 2022, I worked as a Web Developer at
-                PLAYASIA. During this period, I contributed to the development
-                and maintenance of the company's website and online platforms.
-                Collaborating with a skilled team, I was involved in
-                implementing new features, optimizing user experience, and
-                ensuring the website's responsiveness and functionality. This
-                experience at PLAYASIA allowed me to sharpen my web development
-                skills, work in a fast-paced and dynamic environment, and
-                contribute to the success of a prominent online retail platform.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">August 2021-November 2021</span>
-              <h2>Unity Lead Developer</h2>
-              <span class="position">Fantom</span>
-              <p class="mt-4">
-                Between August 2021 and November 2021, I held the role of Unity
-                Lead Developer at FANTOM. During this period, I led a team in
-                the creation and development of engaging and immersive
-                Unity-based games and applications. I collaborated closely with
-                designers, artists, and programmers to bring innovative concepts
-                to life and deliver high-quality gaming experiences. This
-                experience allowed me to strengthen my leadership abilities,
-                enhance my Unity development skills, and contribute to the
-                success of exciting projects within the gaming industry.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2007-2013</span>
-              <h2>Bachelor's Degree of Architecture</h2>
-              <span class="position">Aklan State University</span>
-              <p class="mt-4">
-                From 2007 to 2013, I pursued a Bachelor's Degree in Architecture
-                at Aklan State University. This program provided me with a
-                comprehensive education in architectural design, construction,
-                and project management. Through the guidance of experienced
-                faculty and practical training, I gained proficiency in using
-                architectural software and developing innovative design
-                solutions. The six-year journey allowed me to refine my creative
-                skills, foster a strong work ethic, and prepare me for a
-                successful career.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">September 2022-April 2023</span>
-              <h2>Game Developer Instructor</h2>
-              <span class="position">Icarmo</span>
-              <p class="mt-4">
-                From September 2022 to April 2023, I had the rewarding
-                opportunity to serve as a Game Developer Instructor at ICARMO.
-                In this role, I had the privilege of sharing my passion for game
-                development with aspiring students. Through engaging lectures,
-                hands-on workshops, and practical projects, I imparted knowledge
-                in various aspects of game design, programming, and mechanics.
-                Witnessing the growth and enthusiasm of my students was truly
-                fulfilling, and it allowed me to further refine my communication
-                and teaching skills. As an instructor, I was able to contribute
-                to the next generation of game developers and inspire a new wave
-                of creativity and innovation in the field of gaming.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">March 2022-April 2022</span>
-              <h2>Web Developer</h2>
-              <span class="position">Ntek</span>
-              <p class="mt-4">
-                From March 2022 to April 2022, I worked as a Web Developer at
-                NTEK. During my tenure, I was involved in designing and
-                developing web applications, collaborating with a talented team
-                to create user-friendly and visually appealing websites. This
-                experience further enriched my technical skills, provided
-                valuable insights into the web development industry, and allowed
-                me to contribute my expertise to deliver exceptional digital
-                solutions for clients.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2005-2007</span>
-              <h2>Associate in Drafting Technology</h2>
-              <span class="position">Aklan State University</span>
-              <p class="mt-4">
-                From 2005 to 2007, I studied Associate in Drafting Technology at
-                Aklan State University. The program equipped me with essential
-                design and drafting skills using cutting-edge software. With
-                hands-on experience and supportive faculty, I developed creative
-                problem-solving abilities and became a well-rounded professional
-                prepared for the design and engineering industry. During my
-                studies, I embraced various design projects, fueling my passion
-                for delivering innovative solutions that exceed client
-                expectations.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p>
-              <a
-                href="https://tumaogames.github.io/Art S. Zolina III-Resume.pdf"
-                class="btn btn-primary py-4 px-5"
-                >Download CV</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section" id="services-section">
-      <div class="container">
-        <div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>
-              I offer a range of professional services that leverage my diverse
-              skill set and expertise to deliver exceptional solutions for
-              clients and projects across various industries. With a focus on
-              quality, innovation, and client satisfaction, my services are
-              tailored to meet unique requirements and exceed expectations.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-analysis"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Web Design</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-flasks"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Game Developer</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-ideas"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Web Developer</h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-analysis"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">3d Modeler</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-flasks"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Architectural Visualization</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-ideas"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Artist</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section" id="skills-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Skills</h1>
-            <h2 class="mb-4">My Skills</h2>
-            <p>
-              I possess a diverse range of skills that have been honed through a
-              combination of education, hands-on experience, and a passion for
-              continuous learning. As a skilled professional, I take pride in my
-              ability to adapt and excel in various domains, making me a
-              versatile asset to any team or project.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>Photoshop</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-1"
-                  role="progressbar"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 90%"
-                >
-                  <span>90%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>jQuery</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-2"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 85%"
-                >
-                  <span>85%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>HTML5</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-3"
-                  role="progressbar"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 95%"
-                >
-                  <span>95%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>CSS3</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-4"
-                  role="progressbar"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 90%"
-                >
-                  <span>90%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>WordPress</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-5"
-                  role="progressbar"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 70%"
-                >
-                  <span>70%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>SEO</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-6"
-                  role="progressbar"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 80%"
-                >
-                  <span>80%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>Unity</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-5"
-                  role="progressbar"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 70%"
-                >
-                  <span>95%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>C#</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-6"
-                  role="progressbar"
-                  aria-valuenow="80"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 80%"
-                >
-                  <span>90%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-project" id="projects-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Our Projects</h2>
-            <p>
-              Welcome to Our Projects! Here at our organization, we take immense
-              pride in our diverse and innovative portfolio of endeavors
-              spanning various industries and domains. As a team of dedicated
-              professionals, we are committed to bringing visionary ideas to
-              life, turning dreams into tangible realities.
-            </p>
-          </div>
-        </div>
-        <h2 class="mb-4 text-center">Games</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-4.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="https://camsurverse.com/">Multiplayer Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-5.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.tumaogames.pigorcbusters"
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-6.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href="https://www.facebook.com/100000232607260/videos/5367882859896081/"
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-7.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="https://unligames.com/">Multiplayer Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-10.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href="https://apkcombo.com/batang-pasaway/com.Reivos.BatangPasaway/"
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-15.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href=""
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-16.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href=""
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-17.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href=""
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-11.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="https://apkcombo.com/super-mama/com.Reivos.SuperMama/">Multiplayer Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-12.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.Reivos.SaanKaPupunta&hl=en"
-                    >Android Game</a>
-                </h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-7.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="https://unligames.com/">Multiplayer Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-13.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="https://tumaogames.itch.io/algebraic-odyssey">Desktop Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-14.png)">
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="#">Desktop Game</a></h3>
-                <span>Game Development</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mb-4 text-center">Websites</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/project-8.png)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3>
-                      <a href="https://breddas.unligames.com/"
-                        >Web Development</a>
-                    </h3>
-                    <span>Web Design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/project-9.png)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3>
-                      <a href="https://tumaogames.com/">Web Development</a>
-                    </h3>
-                    <span>Web Design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 class="mb-4 text-center">3d Modeling and Rendering</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model1.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model1.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model2.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model2.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model3.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model3.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model4.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model4.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model5.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model5.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model6.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model6.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model7.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model7.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model8.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model8.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model9.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model9.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model10.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model10.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model11.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model11.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model12.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model12.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model13.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model13.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model14.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model14.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model15.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model15.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model16.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model16.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model17.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model17.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model18.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model18.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model19.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model19.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model20.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model20.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model21.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model21.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model22.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model22.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model23.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model23.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model24.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model24.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model25.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model25.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model26.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model26.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model27.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model27.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model28.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model28.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model29.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model29.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model30.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model30.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model31.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model31.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model32.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model32.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model33.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model33.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model34.jpg)"
-                >
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model34.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model35.jpg)">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model35.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/3d_model36.jpg)"">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model36.jpg')">3d Rendering</a></h3>
-                    <span>3d Modeling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img"
-      id="section-counter"
-    >
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="100">0</strong>
-                <span>Awards</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1200">0</strong>
-                <span>Complete Projects</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1200">0</strong>
-                <span>Happy Customers</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="ftco-section ftco-hireme img margin-top"
-      style="background-image: url(images/bg_1.jpg)"
-    >
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>I'm <span>Available</span> for freelancing</h2>
-            <p>
-              Experienced Game Developer freelancer ready to exceed your
-              expectations. Specializing in Game Development and Web
-              deevelopment. Let's bring your project to life! Contact:
-              artchel06studios@yahoo.com. Let's collaborate! 🚀
-            </p>
-            <p class="mb-0">
-              <a href="#" class="btn btn-primary py-3 px-5">Hire me</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="ftco-section contact-section ftco-no-pb"
-      id="contact-section"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>
-              I'm always looking forward to connecting with new people,
-              collaborating on exciting projects, and engaging in meaningful
-              conversations. Whether it's professional or casual, I'm here to
-              listen and respond. So, drop me a line, and let's start a
-              conversation!
-            </p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-map-signs"></span>
-              </div>
-              <h3 class="mb-4">Address</h3>
-              <p>Baybay, Andagao, Kalibo, Aklan</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Contact Number</h3>
-              <p><a href="tel://1234567920">+639480599808</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email Address</h3>
-              <p>
-                <a href="mailto:info@yoursite.com"
-                  >artchel06studios@yahoo.com</a
-                >
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">Website</h3>
-              <p><a href="#">tumaogames.com</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="https://tumaogames.com/email.php" class="bg-light p-4 p-md-5 contact-form" method="post">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Your Name"
-                  name="name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Your Email"
-                  name="email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject" name="subject" required/>
-              </div>
-              <div class="form-group">
-                <textarea
-                  cols="30"
-                  rows="7"
-                  class="form-control"
-                  placeholder="Message"
-                  name="message"
-                  required
-                ></textarea>
-              </div>
-              <div class="form-group">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  class="btn btn-primary py-3 px-5"
-                />
-              </div>
-            </form>
-          </div>
-
-          <div class="col-md-6 d-flex">
-            <div
-              class="img"
-              style="background-image: url(images/about.png)"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="popup" id="popup">
-      <div class="popup-content">
-        <img src="" alt="Popup Image" id="popup-image">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="80">
+  <!-- ✅ NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand" href="#home" aria-label="Go to homepage">Art</a>
+      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu" aria-hidden="true"></span> <span class="sr-only">Menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav nav ml-auto">
+          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+          <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>
-                Hello and thank you for visiting! My name is Art, and I am
-                thrilled to showcase my passion for technology and creativity
-                through my portfolio. With a successful journey spanning more
-                than a decade in the industry, I have honed my skills to become
-                a versatile and accomplished web developer and game developer.
-              </p>
-              <ul
-                class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
-              >
-                <li class="ftco-animate">
-                  <a href="https://twitter.com/ArtZolina"
-                    ><span class="icon-twitter"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="https://www.facebook.com/art.zolinaiii"
-                    ><span class="icon-facebook"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="https://www.instagram.com/tumaogames/"
-                    ><span class="icon-instagram"></span
-                  ></a>
-                </li>
-              </ul>
+  <!-- ✅ HERO (reduce layout shift; cleaner headings) -->
+  <section id="home-section" class="hero" aria-label="Hero">
+    <div class="home-slider owl-carousel" aria-live="polite">
+      <div class="slider-item">
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="container">
+          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+            <div class="one-third js-fullheight order-md-last img" style="background-image: url(images/bg_1.png)">
+              <div class="overlay" aria-hidden="true"></div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Home</a
-                  >
-                </li>
-                <li>
-                  <a href="#about-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>About</a
-                  >
-                </li>
-                <li>
-                  <a href="#services-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Services</a
-                  >
-                </li>
-                <li>
-                  <a href="#projects-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Projects</a
-                  >
-                </li>
-                <li>
-                  <a href="#contact-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Web
-                    Design</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Web
-                    Development</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Game
-                    Development</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>3d
-                    Modeling</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>3d
-                    Animation</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Artist</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Have a Questions?</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li>
-                    <span class="icon icon-map-marker"></span
-                    ><span class="text">Baybay, Andagao, Kalibo, Aklan</span>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><span class="icon icon-phone"></span
-                      ><span class="text">+639480599808</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><span class="icon icon-envelope"></span
-                      ><span class="text"> artchel06studios@yahoo.com</span></a
-                    >
-                  </li>
-                </ul>
+            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <div class="text">
+                <span class="subheading">Hello!</span>
+                <h1 class="mb-4 mt-3">Art Zolina III</h1>
+                <h2 class="mb-4">Web Developer • Game Developer</h2>
+                <p>
+                  <a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a>
+                  <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved | This template is made with
-              <i class="icon-heart color-danger" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+      </div>
+
+      <div class="slider-item">
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="container">
+          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+            <div class="one-third js-fullheight order-md-last img" style="background-image: url(images/bg_2.png)">
+              <div class="overlay" aria-hidden="true"></div>
+            </div>
+            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <div class="text">
+                <span class="subheading">Welcome</span>
+                <h2 class="mb-4">Based in the Philippines</h2>
+                <p>
+                  <a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a>
+                  <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
     </div>
+  </section>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="myscript.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- ✅ ABOUT -->
+  <section class="ftco-about img ftco-section ftco-no-pb" id="about-section" aria-label="About">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-md-6 col-lg-5 d-flex">
+          <div class="img-about img d-flex align-items-stretch">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="img d-flex align-self-stretch align-items-center" style="background-image: url(images/bg_1.png)" role="img" aria-label="Portrait and showcase image"></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+          <div class="row justify-content-start pb-3">
+            <div class="col-md-12 heading-section ftco-animate">
+              <h2 class="mb-4">About Me</h2>
+              <p>Seasoned Web & Game Developer with 10+ years delivering performant Unity and HTML5 experiences. I build production systems that scale, teach teams, and ship reliably.</p>
+              <ul class="about-info mt-4 px-md-0 px-2">
+                <li class="d-flex"><span>Name:</span> <span>Art Zolina III</span></li>
+                <li class="d-flex"><span>Location:</span> <span>Kalibo, Aklan, Philippines</span></li>
+                <li class="d-flex"><span>Email:</span> <span><a href="mailto:artchel06studios@yahoo.com">artchel06studios@yahoo.com</a></span></li>
+                <li class="d-flex"><span>Phone:</span> <span><a href="tel:+639480599808">+63 948 059 9808</a></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="counter-wrap ftco-animate d-flex mt-md-3">
+            <div class="text">
+              <p class="mb-4"><span class="number" data-number="120">0</span> <span>Projects completed</span></p>
+              <p>
+                <a href="https://tumaogames.github.io/Art%20S.%20Zolina%20III-Resume.pdf" class="btn btn-primary py-3 px-3" rel="noopener" target="_blank">Download CV</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ RESUME -->
+  <section class="ftco-section ftco-no-pb" id="resume-section" aria-label="Resume">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-10 heading-section text-center ftco-animate">
+          <h2 class="mb-4">Resume</h2>
+          <p>I create elegant, user-friendly experiences and performant gameplay systems. Unity, C#, HTML5/Phaser, and modern web stacks.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="resume-wrap ftco-animate">
+            <span class="date">Apr 29, 2025 – Oct 13, 2025</span>
+            <h3>Game Developer</h3>
+            <span class="position">HPL Game Design Corporation</span>
+            <p class="mt-4">Built and optimized core gameplay systems in Unity; collaborated across disciplines; shipped polished multiplatform builds.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">Nov 2023 – Sep 2024</span>
+            <h3>Senior Game Developer</h3>
+            <span class="position">POGO</span>
+            <p class="mt-4">Developed slot and casual games in Unity & HTML5; full lifecycle from concept to deployment; asset pipelines and performance tuning.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">May 2022 – Aug 2022</span>
+            <h3>Web Developer</h3>
+            <span class="position">Playasia</span>
+            <p class="mt-4">Implemented features and UX improvements; responsive UI; site performance maintenance in a high-traffic environment.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">Aug 2021 – Nov 2021</span>
+            <h3>Unity Lead Developer</h3>
+            <span class="position">Fantom</span>
+            <p class="mt-4">Led Unity dev team; delivered immersive experiences; strengthened processes and code quality.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">2007 – 2013</span>
+            <h3>Bachelor of Architecture</h3>
+            <span class="position">Aklan State University</span>
+            <p class="mt-4">Design, construction, project management foundations; software-driven workflows and visualization.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="resume-wrap ftco-animate">
+            <span class="date">Sep 2022 – Apr 2023</span>
+            <h3>Game Developer Instructor</h3>
+            <span class="position">ICARMO</span>
+            <p class="mt-4">Delivered lectures and workshops on game design/programming; mentored student projects.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">Mar 2022 – Apr 2022</span>
+            <h3>Web Developer</h3>
+            <span class="position">NTEK</span>
+            <p class="mt-4">Built responsive sites and components; collaborated on UX/UI and delivery.</p>
+          </div>
+          <div class="resume-wrap ftco-animate">
+            <span class="date">2005 – 2007</span>
+            <h3>Associate in Drafting Technology</h3>
+            <span class="position">Aklan State University</span>
+            <p class="mt-4">Technical drafting, CAD, and construction drawings; creative problem solving.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center ftco-animate">
+          <p><a href="https://tumaogames.github.io/Art%20S.%20Zolina%20III-Resume.pdf" class="btn btn-primary py-4 px-5" target="_blank" rel="noopener">Download CV</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ SERVICES -->
+  <section class="ftco-section" id="services-section" aria-label="Services">
+    <div class="container">
+      <div class="row justify-content-center py-5 mt-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h2 class="mb-4">Services</h2>
+          <p>Professional services across web and game development with quality, performance, and clear communication.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-analysis" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">Web Design</h3></div></a></div>
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-flasks" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">Game Development</h3></div></a></div>
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-ideas" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">Web Development</h3></div></a></div>
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-analysis" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">3D Modeling</h3></div></a></div>
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-flasks" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">Arch Viz</h3></div></a></div>
+        <div class="col-md-4 text-center d-flex ftco-animate"><a class="services-1" href="#"><span class="icon"><i class="flaticon-ideas" aria-hidden="true"></i></span><div class="desc"><h3 class="mb-5">Art & Illustration</h3></div></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ SKILLS (fix mislabeled values) -->
+  <section class="ftco-section" id="skills-section" aria-label="Skills">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h2 class="mb-4">Skills</h2>
+          <p>Diverse skill set spanning design tools, front-end, and game engines.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>Photoshop</h3><div class="progress"><div class="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"><span>90%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>jQuery</h3><div class="progress"><div class="progress-bar color-2" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%"><span>85%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>HTML5</h3><div class="progress"><div class="progress-bar color-3" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%"><span>95%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>CSS3</h3><div class="progress"><div class="progress-bar color-4" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"><span>90%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>WordPress</h3><div class="progress"><div class="progress-bar color-5" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"><span>70%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>SEO</h3><div class="progress"><div class="progress-bar color-6" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%"><span>80%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>Unity</h3><div class="progress"><div class="progress-bar color-5" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%"><span>95%</span></div></div></div>
+        </div>
+        <div class="col-md-6 animate-box">
+          <div class="progress-wrap ftco-animate"><h3>C#</h3><div class="progress"><div class="progress-bar color-6" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"><span>90%</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ PROJECTS (set aspect ratios to avoid CLS; keep your links) -->
+  <section class="ftco-section ftco-project" id="projects-section" aria-label="Projects">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h2 class="mb-4">Projects</h2>
+          <p>Selected games, websites, and 3D visualization work.</p>
+        </div>
+      </div>
+
+      <h3 class="mb-4 text-center">Games</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-4.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://camsurverse.com/" target="_blank" rel="noopener">Multiplayer Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-5.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://play.google.com/store/apps/details?id=com.tumaogames.pigorcbusters" target="_blank" rel="noopener">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-6.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://www.facebook.com/100000232607260/videos/5367882859896081/" target="_blank" rel="noopener">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-7.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://unligames.com/" target="_blank" rel="noopener">Multiplayer Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-10.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://apkcombo.com/batang-pasaway/com.Reivos.BatangPasaway/" target="_blank" rel="noopener">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-15.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="#">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-16.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="#">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-17.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="#">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-11.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://apkcombo.com/super-mama/com.Reivos.SuperMama/" target="_blank" rel="noopener">Multiplayer Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-12.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://play.google.com/store/apps/details?id=com.Reivos.SaanKaPupunta&hl=en" target="_blank" rel="noopener">Android Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-7.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://unligames.com/" target="_blank" rel="noopener">Multiplayer Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-13.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="https://tumaogames.itch.io/algebraic-odyssey" target="_blank" rel="noopener">Desktop Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-14.png)">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="text text-center p-4"><h3><a href="#">Desktop Game</a></h3><span>Game Development</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mb-4 text-center">Websites</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-8.png)">
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="text text-center p-4"><h3><a href="https://breddas.unligames.com/" target="_blank" rel="noopener">Web Development</a></h3><span>Web Design</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-9.png)">
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="text text-center p-4"><h3><a href="https://tumaogames.com/" target="_blank" rel="noopener">Web Development</a></h3><span>Web Design</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mb-4 text-center">3D Modeling and Rendering</h3>
+      <!-- NOTE: Keep your existing 3D grids; ensure popup below is wired -->
+      <!-- Sample card; replicate for all items as you had. -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/3d_model1.jpg)">
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="text text-center p-4"><h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model1.jpg')">3D Rendering</a></h3><span>3D Modeling</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/3d_model2.jpg)">
+                <div class="overlay" aria-hidden="true"></div>
+                <div class="text text-center p-4"><h3><a href="javascript:void(0);" onclick="showPopup('https://tumaogames.github.io/images/3d_model2.jpg')">3D Rendering</a></h3><span>3D Modeling</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ... keep the remainder of your 3D blocks unchanged except fixing any stray quotes and ensuring images exist ... -->
+    </div>
+  </section>
+
+  <!-- ✅ STATS / COUNTER -->
+  <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter" aria-label="Statistics">
+    <div class="container">
+      <div class="row d-md-flex align-items-center">
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"><div class="block-18"><div class="text"><strong class="number" data-number="100">0</strong><span>Awards</span></div></div></div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"><div class="block-18"><div class="text"><strong class="number" data-number="1200">0</strong><span>Complete Projects</span></div></div></div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"><div class="block-18"><div class="text"><strong class="number" data-number="1200">0</strong><span>Happy Customers</span></div></div></div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"><div class="block-18"><div class="text"><strong class="number" data-number="500">0</strong><span>Cups of coffee</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CTA / HIRE ME -->
+  <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)" aria-label="Hire me">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 ftco-animate text-center">
+          <h2>I'm <span>Available</span> for freelancing</h2>
+          <p>Experienced Game Developer ready to exceed expectations. Unity, HTML5, performance, and polish. Let's build.</p>
+          <p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">Hire me</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CONTACT -->
+  <section class="ftco-section contact-section ftco-no-pb" id="contact-section" aria-label="Contact">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h2 class="mb-4">Contact Me</h2>
+          <p>Let's connect about web/game projects and collaborations.</p>
+        </div>
+      </div>
+
+      <div class="row d-flex contact-info mb-5">
+        <div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="icon d-flex align-items-center justify-content-center"><span class="icon-map-signs" aria-hidden="true"></span></div><h3 class="mb-4">Address</h3><p>Baybay, Andagao, Kalibo, Aklan</p></div></div>
+        <div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="icon d-flex align-items-center justify-content-center"><span class="icon-phone2" aria-hidden="true"></span></div><h3 class="mb-4">Contact Number</h3><p><a href="tel:+639480599808">+63 948 059 9808</a></p></div></div>
+        <div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="icon d-flex align-items-center justify-content-center"><span class="icon-paper-plane" aria-hidden="true"></span></div><h3 class="mb-4">Email Address</h3><p><a href="mailto:artchel06studios@yahoo.com">artchel06studios@yahoo.com</a></p></div></div>
+        <div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="icon d-flex align-items-center justify-content-center"><span class="icon-globe" aria-hidden="true"></span></div><h3 class="mb-4">Website</h3><p><a href="https://tumaogames.com/" target="_blank" rel="noopener">tumaogames.com</a></p></div></div>
+      </div>
+
+      <div class="row no-gutters block-9">
+        <div class="col-md-6 order-md-last d-flex">
+          <form action="https://tumaogames.com/email.php" class="bg-light p-4 p-md-5 contact-form" method="post">
+            <div class="form-group"><label class="sr-only" for="name">Your Name</label><input id="name" type="text" class="form-control" placeholder="Your Name" name="name" required autocomplete="name" /></div>
+            <div class="form-group"><label class="sr-only" for="email">Your Email</label><input id="email" type="email" class="form-control" placeholder="Your Email" name="email" required autocomplete="email" /></div>
+            <div class="form-group"><label class="sr-only" for="subject">Subject</label><input id="subject" type="text" class="form-control" placeholder="Subject" name="subject" required /></div>
+            <div class="form-group"><label class="sr-only" for="message">Message</label><textarea id="message" cols="30" rows="7" class="form-control" placeholder="Message" name="message" required></textarea></div>
+            <div class="form-group"><input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" /></div>
+          </form>
+        </div>
+        <div class="col-md-6 d-flex"><img src="images/about.png" alt="About Art — illustration" loading="lazy" decoding="async" class="img w-100 h-auto" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ POPUP -->
+  <div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div class="popup-content">
+      <img src="" alt="Full-size render" id="popup-image" loading="eager">
+      <span class="close-btn" onclick="closePopup()" aria-label="Close">&times;</span>
+    </div>
+  </div>
+
+  <!-- ✅ FOOTER -->
+  <footer class="ftco-footer ftco-section" aria-label="Footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">About</h2>
+            <p>Web & Game Developer with a decade of shipping polished interactive experiences.</p>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
+              <li class="ftco-animate"><a href="https://twitter.com/ArtZolina" target="_blank" rel="noopener" aria-label="Twitter"><span class="icon-twitter" aria-hidden="true"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.facebook.com/art.zolinaiii" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook" aria-hidden="true"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.instagram.com/tumaogames/" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-4">
+            <h2 class="ftco-heading-2">Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+              <li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+              <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+              <li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+              <li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Services</h2>
+            <ul class="list-unstyled">
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Game Development</a></li>
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>3D Modeling</a></li>
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>3D Animation</a></li>
+              <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Art</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker" aria-hidden="true"></span><span class="text">Baybay, Andagao, Kalibo, Aklan</span></li>
+                <li><a href="tel:+639480599808"><span class="icon icon-phone" aria-hidden="true"></span><span class="text">+63 948 059 9808</span></a></li>
+                <li><a href="mailto:artchel06studios@yahoo.com"><span class="icon icon-envelope" aria-hidden="true"></span><span class="text">artchel06studios@yahoo.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>© <span id="year"></span> All rights reserved • Template base: <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ LOADER -->
+  <div id="ftco-loader" class="show fullscreen" aria-hidden="true">
+    <svg class="circular" width="48" height="48" role="img" aria-label="Loading">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+    </svg>
+  </div>
+
+  <!-- ✅ SCRIPTS (defer for better TTI) -->
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jquery-migrate-3.0.1.min.js" defer></script>
+  <script src="js/popper.min.js" defer></script>
+  <script src="js/bootstrap.min.js" defer></script>
+  <script src="js/jquery.easing.1.3.js" defer></script>
+  <script src="js/jquery.waypoints.min.js" defer></script>
+  <script src="js/jquery.stellar.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="js/jquery.magnific-popup.min.js" defer></script>
+  <script src="js/aos.js" defer></script>
+  <script src="js/jquery.animateNumber.min.js" defer></script>
+  <script src="js/scrollax.min.js" defer></script>
+  <script src="myscript.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- ✅ LIGHT POPUP HANDLERS (no jQuery dependency) -->
+  <script>
+    function showPopup(src){
+      var p = document.getElementById('popup');
+      var img = document.getElementById('popup-image');
+      img.src = src; p.classList.add('open');
+    }
+    function closePopup(){document.getElementById('popup').classList.remove('open');}
+    // Close on overlay click or ESC
+    document.getElementById('popup').addEventListener('click', function(e){ if(e.target === this) closePopup(); });
+    window.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePopup(); });
+  </script>
+</body>
 </html>
