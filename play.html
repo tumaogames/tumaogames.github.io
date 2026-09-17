@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TumaoGames — Play, Publish, License</title>
+  <meta name="description" content="Original games and interactive products by TumaoGames. Play selected titles, explore releases, and contact us for licensing or publishing opportunities." />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="canonical" href="https://tumaogames.github.io/play.html" />
+  <meta property="og:title" content="TumaoGames — Play, Publish, License" />
+  <meta property="og:description" content="Original games, playable releases, and licensing opportunities from TumaoGames." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tumaogames.github.io/play.html" />
+  <meta property="og:image" content="https://tumaogames.github.io/images/project-4.png" />
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#070b14;--panel:#0d1422;--panel2:#111a2b;--text:#f6f8fc;
+      --muted:#aeb9cc;--line:rgba(255,255,255,.1);--accent:#7c5cff;
+      --accent2:#29d3ff;--radius:26px;--shadow:0 28px 80px rgba(0,0,0,.4)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(circle at 18% 12%,rgba(124,92,255,.18),transparent 34%),
+      radial-gradient(circle at 82% 8%,rgba(41,211,255,.12),transparent 30%),var(--bg);
+      color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .navin{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+    .mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 34px rgba(124,92,255,.45)}
+    .navlinks{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:14px}
+    .navlinks a:hover{color:#fff}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:14px 20px;font-weight:750;border:1px solid var(--line);transition:.2s ease;background:rgba(255,255,255,.03)}
+    .button:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.24)}
+    .button.primary{background:linear-gradient(135deg,var(--accent),#5a8cff);border:0;box-shadow:0 14px 40px rgba(92,104,255,.28)}
+    .hero{padding:92px 0 62px}
+    .eyebrow{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#cbd5e7;background:rgba(255,255,255,.025);font-size:13px}
+    h1{font-size:clamp(50px,8vw,98px);line-height:.94;letter-spacing:-.055em;margin:24px 0 22px;max-width:980px}
+    .gradient{background:linear-gradient(100deg,#fff 5%,#b6c8ff 45%,#76e6ff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(18px,2.2vw,24px);max-width:760px;color:var(--muted);margin:0 0 30px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .proof{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .proof div{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}
+    .proof strong{display:block;font-size:15px}.proof span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+    section{padding:72px 0}
+    .sectionhead{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    h2{font-size:clamp(34px,5vw,58px);letter-spacing:-.04em;line-height:1;margin:0}
+    .sectionhead p{max-width:560px;color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));box-shadow:var(--shadow)}
+    .visual{aspect-ratio:16/10;background:#0b1020;overflow:hidden}
+    .visual img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s ease}
+    .card:hover .visual img{transform:scale(1.035);filter:saturate(1.08)}
+    .cardbody{padding:22px}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:#8de7ff;font-weight:800}
+    .card h3{font-size:25px;line-height:1.08;margin:9px 0 10px;letter-spacing:-.025em}
+    .card p{color:var(--muted);margin:0 0 20px;min-height:72px}
+    .card .button{width:100%}
+    .business{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .pitch,.cta{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.035);padding:34px}
+    .pitch h3,.cta h3{font-size:32px;letter-spacing:-.03em;margin:0 0 14px}
+    .pitch p,.cta p{color:var(--muted);margin:0 0 22px}
+    .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+    .path{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+    .path strong{display:block;margin-bottom:4px}.path span{color:var(--muted);font-size:13px}
+    footer{padding:38px 0 52px;color:var(--muted);border-top:1px solid var(--line);font-size:14px}
+    .foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    @media(max-width:900px){.grid,.proof{grid-template-columns:1fr 1fr}.business{grid-template-columns:1fr}.grid .card:last-child{grid-column:1/-1}.paths{grid-template-columns:1fr}.navlinks a:not(.button){display:none}}
+    @media(max-width:620px){.hero{padding-top:64px}.grid,.proof{grid-template-columns:1fr}.grid .card:last-child{grid-column:auto}.sectionhead,.foot{align-items:flex-start;flex-direction:column}.wrap{width:min(100% - 24px,1180px)}h1{font-size:51px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap navin">
+      <a class="brand" href="https://tumaogames.com/" aria-label="TumaoGames home"><span class="mark" aria-hidden="true"></span><span>TumaoGames</span></a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#games">Games</a><a href="#business">Business</a>
+        <a class="button" href="mailto:artchel06studios@yahoo.com?subject=TumaoGames%20Partnership">Partner with us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Independent games • owned products • direct distribution</span>
+        <h1><span class="gradient">Build worlds people choose to enter.</span></h1>
+        <p class="lead">TumaoGames creates original interactive products across mobile, desktop, and web. Play what is live now, or talk to us about licensing, publishing, and distribution.</p>
+        <div class="actions">
+          <a class="button primary" href="#games">Play our games →</a>
+          <a class="button" href="mailto:artchel06studios@yahoo.com?subject=Licensing%20or%20Publishing%20Inquiry">Licensing / publishing</a>
+        </div>
+        <div class="proof" aria-label="Product focus">
+          <div><strong>Owned products first</strong><span>We build reusable assets and IP instead of selling only hours.</span></div>
+          <div><strong>Playable proof</strong><span>Live titles and public builds are the evidence, not promises.</span></div>
+          <div><strong>Multiple revenue paths</strong><span>Players, stores, licensing, publishing, and partnerships.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="games">
+      <div class="wrap">
+        <div class="sectionhead"><h2>Play now.</h2><p>Existing public releases and live experiences. Each title routes directly to the place where it can be played or acquired.</p></div>
+        <div class="grid">
+          <article class="card">
+            <div class="visual"><img src="images/project-4.png" alt="Camsurverse multiplayer game" fetchpriority="high"></div>
+            <div class="cardbody"><span class="kicker">Web multiplayer</span><h3>Camsurverse</h3><p>A live multiplayer experience from the TumaoGames portfolio.</p><a class="button primary" href="https://camsurverse.com/" target="_blank" rel="noopener">Enter Camsurverse →</a></div>
+          </article>
+          <article class="card">
+            <div class="visual"><img src="images/project-5.png" alt="Pig Orc Busters Android game" loading="lazy" decoding="async"></div>
+            <div class="cardbody"><span class="kicker">Android</span><h3>Pig Orc Busters</h3><p>Mobile game release available through Google Play.</p><a class="button primary" href="https://play.google.com/store/apps/details?id=com.tumaogames.pigorcbusters" target="_blank" rel="noopener">View on Google Play →</a></div>
+          </article>
+          <article class="card">
+            <div class="visual"><img src="images/project-13.png" alt="Algebraic Odyssey desktop game" loading="lazy" decoding="async"></div>
+            <div class="cardbody"><span class="kicker">Desktop</span><h3>Algebraic Odyssey</h3><p>A desktop title distributed through the TumaoGames itch.io catalog.</p><a class="button primary" href="https://tumaogames.itch.io/algebraic-odyssey" target="_blank" rel="noopener">Open on itch.io →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="business">
+      <div class="wrap business">
+        <div class="pitch">
+          <span class="kicker">Business layer</span><h3>Revenue should come from products, not endless infrastructure.</h3>
+          <p>TumaoGames is available for commercial paths that compound the value of existing game technology and IP.</p>
+          <div class="paths">
+            <div class="path"><strong>Licensing</strong><span>Game systems, builds, or IP for commercial use.</span></div>
+            <div class="path"><strong>Publishing</strong><span>Distribution and publishing conversations around existing titles.</span></div>
+            <div class="path"><strong>Partnerships</strong><span>Structured opportunities where both sides share upside.</span></div>
+          </div>
+        </div>
+        <div class="cta">
+          <span class="kicker">Commercial contact</span><h3>Bring a concrete opportunity.</h3>
+          <p>For licensing, publishing, platform distribution, acquisition, sponsorship, or strategic partnerships, contact TumaoGames directly.</p>
+          <a class="button primary" href="mailto:artchel06studios@yahoo.com?subject=Commercial%20Opportunity%20for%20TumaoGames">Start a commercial conversation →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><span>© <span id="year"></span> TumaoGames. All rights reserved.</span><a href="https://tumaogames.com/">tumaogames.com</a></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
